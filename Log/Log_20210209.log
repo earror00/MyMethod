@@ -1,0 +1,214 @@
+2021-02-09 10:44:52: connect FTP(10.102.4.219:21) successfully
+2021-02-09 10:44:52: login FTP(10.102.4.219:21) successfully
+2021-02-09 10:44:52: transform failed
+2021-02-09 10:44:53: Git tag retrieved successfully
+2021-02-09 10:44:53: The tag and hash value were successfully stored in the dictionary
+2021-02-09 10:44:53: current directory in FTP: ['/mnt/work/FTP/Agent', '/mnt/work/FTP/Auto', '/mnt/work/FTP/LARKPHONEFAILPICTURES', '/mnt/work/FTP/Logs', '/mnt/work/FTP/Macallan', '/mnt/work/FTP/Restrain', '/mnt/work/FTP/SoftWareResources', '/mnt/work/FTP/git_code', '/mnt/work/FTP/sanfang_apk', '/mnt/work/FTP/下载', '/mnt/work/FTP/临时文件', '/mnt/work/FTP/公共的', '/mnt/work/FTP/图片', '/mnt/work/FTP/文档', '/mnt/work/FTP/桌面', '/mnt/work/FTP/模板', '/mnt/work/FTP/视频', '/mnt/work/FTP/音乐'] 
+2021-02-09 10:44:53: Macallan The folder already exists. Update the DIR list and enter the folder
+2021-02-09 10:44:53: 15A The folder already exists. Update the DIR list and enter the folder
+2021-02-09 10:44:53: Scripts The folder already exists. Update the DIR list and enter the folder
+2021-02-09 10:44:53: DOU The folder already exists. Update the DIR list and enter the folder
+2021-02-09 10:44:53: HW The folder already exists. Update the DIR list and enter the folder
+2021-02-09 10:44:53: QW1900 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 10:44:53: SC_UL10V100R001C00B132 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 10:44:53: transform script from git to FTP successfully
+2021-02-09 10:44:53: Switch to Home Directory
+2021-02-09 10:44:53: connect FTP(10.102.4.219:21) closed 
+2021-02-09 17:44:08: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:44:08: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:44:08: Error: [Errno 2] No such file or directory: './code//0121_1801.zip'
+2021-02-09 17:44:08: transform failed
+2021-02-09 17:44:09: Git tag retrieved successfully
+2021-02-09 17:44:09: The tag and hash value were successfully stored in the dictionary
+2021-02-09 17:44:09: current directory in FTP: ['/mnt/work/FTP/Agent', '/mnt/work/FTP/Auto', '/mnt/work/FTP/LARKPHONEFAILPICTURES', '/mnt/work/FTP/Logs', '/mnt/work/FTP/Macallan', '/mnt/work/FTP/Restrain', '/mnt/work/FTP/SoftWareResources', '/mnt/work/FTP/git_code', '/mnt/work/FTP/sanfang_apk', '/mnt/work/FTP/下载', '/mnt/work/FTP/临时文件', '/mnt/work/FTP/公共的', '/mnt/work/FTP/图片', '/mnt/work/FTP/文档', '/mnt/work/FTP/桌面', '/mnt/work/FTP/模板', '/mnt/work/FTP/视频', '/mnt/work/FTP/音乐'] 
+2021-02-09 17:44:09: Macallan The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:44:09: 15A The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:44:09: Scripts The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:44:09: DOU The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:44:09: HW The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:44:09: QW1900 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:44:09: SC_UL10V100R001C00B132 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:44:09: transform script from git to FTP successfully
+2021-02-09 17:44:09: Switch to Root Directory
+2021-02-09 17:44:09: connect FTP(10.102.4.219:21) closed 
+2021-02-09 17:45:28: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:45:28: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:47:27: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:47:27: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:47:28: Git tag retrieved successfully
+2021-02-09 17:47:28: The tag and hash value were successfully stored in the dictionary
+2021-02-09 17:47:28: current directory in FTP: ['/mnt/work/FTP/Agent', '/mnt/work/FTP/Auto', '/mnt/work/FTP/LARKPHONEFAILPICTURES', '/mnt/work/FTP/Logs', '/mnt/work/FTP/Macallan', '/mnt/work/FTP/Restrain', '/mnt/work/FTP/SoftWareResources', '/mnt/work/FTP/git_code', '/mnt/work/FTP/sanfang_apk', '/mnt/work/FTP/下载', '/mnt/work/FTP/临时文件', '/mnt/work/FTP/公共的', '/mnt/work/FTP/图片', '/mnt/work/FTP/文档', '/mnt/work/FTP/桌面', '/mnt/work/FTP/模板', '/mnt/work/FTP/视频', '/mnt/work/FTP/音乐'] 
+2021-02-09 17:47:28: Macallan The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:47:28: 15A The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:47:28: Scripts The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:47:28: DOU The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:47:28: HW The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:47:28: QW1900 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:47:28: SC_UL10V100R001C00B132 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:47:28: transform script from git to FTP successfully
+2021-02-09 17:47:28: Switch to Root Directory
+2021-02-09 17:47:28: connect FTP(10.102.4.219:21) closed 
+2021-02-09 17:47:29: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:47:29: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:48:48: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:48:49: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:48:49: Git tag retrieved successfully
+2021-02-09 17:48:49: The tag and hash value were successfully stored in the dictionary
+2021-02-09 17:48:49: current directory in FTP: ['/mnt/work/FTP/Agent', '/mnt/work/FTP/Auto', '/mnt/work/FTP/LARKPHONEFAILPICTURES', '/mnt/work/FTP/Logs', '/mnt/work/FTP/Macallan', '/mnt/work/FTP/Restrain', '/mnt/work/FTP/SoftWareResources', '/mnt/work/FTP/git_code', '/mnt/work/FTP/sanfang_apk', '/mnt/work/FTP/下载', '/mnt/work/FTP/临时文件', '/mnt/work/FTP/公共的', '/mnt/work/FTP/图片', '/mnt/work/FTP/文档', '/mnt/work/FTP/桌面', '/mnt/work/FTP/模板', '/mnt/work/FTP/视频', '/mnt/work/FTP/音乐'] 
+2021-02-09 17:48:49: Macallan The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:48:49: 15A The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:48:49: Scripts The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:48:49: DOU The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:48:49: HW The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:48:49: QW1900 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:48:49: SC_UL10V100R001C00B132 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:48:49: transform script from git to FTP successfully
+2021-02-09 17:48:49: Switch to Root Directory
+2021-02-09 17:48:49: connect FTP(10.102.4.219:21) closed 
+2021-02-09 17:48:50: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:48:50: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:48:50: code/ Directory does not exist, create this directory and switch to it
+2021-02-09 17:49:56: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:49:56: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:49:57: Git tag retrieved successfully
+2021-02-09 17:49:57: The tag and hash value were successfully stored in the dictionary
+2021-02-09 17:49:57: current directory in FTP: ['/mnt/work/FTP/Agent', '/mnt/work/FTP/Auto', '/mnt/work/FTP/LARKPHONEFAILPICTURES', '/mnt/work/FTP/Logs', '/mnt/work/FTP/Macallan', '/mnt/work/FTP/Restrain', '/mnt/work/FTP/SoftWareResources', '/mnt/work/FTP/git_code', '/mnt/work/FTP/sanfang_apk', '/mnt/work/FTP/下载', '/mnt/work/FTP/临时文件', '/mnt/work/FTP/公共的', '/mnt/work/FTP/图片', '/mnt/work/FTP/文档', '/mnt/work/FTP/桌面', '/mnt/work/FTP/模板', '/mnt/work/FTP/视频', '/mnt/work/FTP/音乐'] 
+2021-02-09 17:49:57: Macallan The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:49:57: 15A The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:49:57: Scripts The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:49:57: DOU The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:49:57: HW The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:49:57: QW1900 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:49:57: SC_UL10V100R001C00B132 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:49:57: transform script from git to FTP successfully
+2021-02-09 17:49:57: Switch to Root Directory
+2021-02-09 17:49:57: connect FTP(10.102.4.219:21) closed 
+2021-02-09 17:49:57: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:49:57: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:49:57: The code/ directory already exists
+2021-02-09 17:55:27: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:55:27: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:55:28: Git tag retrieved successfully
+2021-02-09 17:55:28: The tag and hash value were successfully stored in the dictionary
+2021-02-09 17:55:28: current directory in FTP: ['/mnt/work/FTP/Agent', '/mnt/work/FTP/Auto', '/mnt/work/FTP/LARKPHONEFAILPICTURES', '/mnt/work/FTP/Logs', '/mnt/work/FTP/Macallan', '/mnt/work/FTP/Restrain', '/mnt/work/FTP/SoftWareResources', '/mnt/work/FTP/git_code', '/mnt/work/FTP/sanfang_apk', '/mnt/work/FTP/下载', '/mnt/work/FTP/临时文件', '/mnt/work/FTP/公共的', '/mnt/work/FTP/图片', '/mnt/work/FTP/文档', '/mnt/work/FTP/桌面', '/mnt/work/FTP/模板', '/mnt/work/FTP/视频', '/mnt/work/FTP/音乐'] 
+2021-02-09 17:55:28: Macallan The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:28: 15A The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:28: Scripts The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:28: DOU The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:28: HW The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:28: QW1900 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:28: SC_UL10V100R001C00B132 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:28: transform script from git to FTP successfully
+2021-02-09 17:55:28: Switch to Root Directory
+2021-02-09 17:55:28: connect FTP(10.102.4.219:21) closed 
+2021-02-09 17:55:28: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:55:28: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:55:28: The code/ directory already exists
+2021-02-09 17:55:47: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:55:47: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:55:48: Git tag retrieved successfully
+2021-02-09 17:55:48: The tag and hash value were successfully stored in the dictionary
+2021-02-09 17:55:48: current directory in FTP: ['/mnt/work/FTP/Agent', '/mnt/work/FTP/Auto', '/mnt/work/FTP/LARKPHONEFAILPICTURES', '/mnt/work/FTP/Logs', '/mnt/work/FTP/Macallan', '/mnt/work/FTP/Restrain', '/mnt/work/FTP/SoftWareResources', '/mnt/work/FTP/git_code', '/mnt/work/FTP/sanfang_apk', '/mnt/work/FTP/下载', '/mnt/work/FTP/临时文件', '/mnt/work/FTP/公共的', '/mnt/work/FTP/图片', '/mnt/work/FTP/文档', '/mnt/work/FTP/桌面', '/mnt/work/FTP/模板', '/mnt/work/FTP/视频', '/mnt/work/FTP/音乐'] 
+2021-02-09 17:55:48: Macallan The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:48: 15A The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:48: Scripts The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:48: DOU The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:48: HW The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:48: QW1900 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:48: SC_UL10V100R001C00B132 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:48: transform script from git to FTP successfully
+2021-02-09 17:55:48: Switch to Root Directory
+2021-02-09 17:55:48: connect FTP(10.102.4.219:21) closed 
+2021-02-09 17:55:48: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:55:48: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:55:48: The ./code/ directory already exists
+2021-02-09 17:55:54: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:55:54: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:55:55: Git tag retrieved successfully
+2021-02-09 17:55:55: The tag and hash value were successfully stored in the dictionary
+2021-02-09 17:55:55: current directory in FTP: ['/mnt/work/FTP/Agent', '/mnt/work/FTP/Auto', '/mnt/work/FTP/LARKPHONEFAILPICTURES', '/mnt/work/FTP/Logs', '/mnt/work/FTP/Macallan', '/mnt/work/FTP/Restrain', '/mnt/work/FTP/SoftWareResources', '/mnt/work/FTP/git_code', '/mnt/work/FTP/sanfang_apk', '/mnt/work/FTP/下载', '/mnt/work/FTP/临时文件', '/mnt/work/FTP/公共的', '/mnt/work/FTP/图片', '/mnt/work/FTP/文档', '/mnt/work/FTP/桌面', '/mnt/work/FTP/模板', '/mnt/work/FTP/视频', '/mnt/work/FTP/音乐'] 
+2021-02-09 17:55:55: Macallan The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:55: 15A The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:55: Scripts The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:55: DOU The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:55: HW The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:55: QW1900 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:55: SC_UL10V100R001C00B132 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:55:55: transform script from git to FTP successfully
+2021-02-09 17:55:55: Switch to Root Directory
+2021-02-09 17:55:55: connect FTP(10.102.4.219:21) closed 
+2021-02-09 17:55:55: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:55:55: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:55:55: The /code/ directory already exists
+2021-02-09 17:56:52: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:56:52: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:56:53: Git tag retrieved successfully
+2021-02-09 17:56:53: The tag and hash value were successfully stored in the dictionary
+2021-02-09 17:56:53: current directory in FTP: ['/mnt/work/FTP/Agent', '/mnt/work/FTP/Auto', '/mnt/work/FTP/LARKPHONEFAILPICTURES', '/mnt/work/FTP/Logs', '/mnt/work/FTP/Macallan', '/mnt/work/FTP/Restrain', '/mnt/work/FTP/SoftWareResources', '/mnt/work/FTP/git_code', '/mnt/work/FTP/sanfang_apk', '/mnt/work/FTP/下载', '/mnt/work/FTP/临时文件', '/mnt/work/FTP/公共的', '/mnt/work/FTP/图片', '/mnt/work/FTP/文档', '/mnt/work/FTP/桌面', '/mnt/work/FTP/模板', '/mnt/work/FTP/视频', '/mnt/work/FTP/音乐'] 
+2021-02-09 17:56:53: Macallan The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:56:53: 15A The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:56:53: Scripts The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:56:53: DOU The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:56:53: HW The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:56:53: QW1900 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:56:53: SC_UL10V100R001C00B132 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:56:53: transform script from git to FTP successfully
+2021-02-09 17:56:53: Switch to Root Directory
+2021-02-09 17:56:53: connect FTP(10.102.4.219:21) closed 
+2021-02-09 17:56:53: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:56:53: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:56:53: The /code/ directory already exists
+2021-02-09 17:56:59: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:56:59: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:57:00: Git tag retrieved successfully
+2021-02-09 17:57:00: The tag and hash value were successfully stored in the dictionary
+2021-02-09 17:57:00: current directory in FTP: ['/mnt/work/FTP/Agent', '/mnt/work/FTP/Auto', '/mnt/work/FTP/LARKPHONEFAILPICTURES', '/mnt/work/FTP/Logs', '/mnt/work/FTP/Macallan', '/mnt/work/FTP/Restrain', '/mnt/work/FTP/SoftWareResources', '/mnt/work/FTP/git_code', '/mnt/work/FTP/sanfang_apk', '/mnt/work/FTP/下载', '/mnt/work/FTP/临时文件', '/mnt/work/FTP/公共的', '/mnt/work/FTP/图片', '/mnt/work/FTP/文档', '/mnt/work/FTP/桌面', '/mnt/work/FTP/模板', '/mnt/work/FTP/视频', '/mnt/work/FTP/音乐'] 
+2021-02-09 17:57:00: Macallan The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:57:00: 15A The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:57:00: Scripts The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:57:00: DOU The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:57:00: HW The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:57:00: QW1900 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:57:00: SC_UL10V100R001C00B132 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:57:00: transform script from git to FTP successfully
+2021-02-09 17:57:00: Switch to Root Directory
+2021-02-09 17:57:00: connect FTP(10.102.4.219:21) closed 
+2021-02-09 17:57:00: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:57:00: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:57:00: The code/ directory already exists
+2021-02-09 17:59:23: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:59:23: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:59:24: Git tag retrieved successfully
+2021-02-09 17:59:24: The tag and hash value were successfully stored in the dictionary
+2021-02-09 17:59:24: current directory in FTP: ['/mnt/work/FTP/Agent', '/mnt/work/FTP/Auto', '/mnt/work/FTP/LARKPHONEFAILPICTURES', '/mnt/work/FTP/Logs', '/mnt/work/FTP/Macallan', '/mnt/work/FTP/Restrain', '/mnt/work/FTP/SoftWareResources', '/mnt/work/FTP/git_code', '/mnt/work/FTP/sanfang_apk', '/mnt/work/FTP/下载', '/mnt/work/FTP/临时文件', '/mnt/work/FTP/公共的', '/mnt/work/FTP/图片', '/mnt/work/FTP/文档', '/mnt/work/FTP/桌面', '/mnt/work/FTP/模板', '/mnt/work/FTP/视频', '/mnt/work/FTP/音乐'] 
+2021-02-09 17:59:24: Macallan The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:59:24: 15A The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:59:24: Scripts The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:59:24: DOU The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:59:24: HW The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:59:24: QW1900 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:59:24: SC_UL10V100R001C00B132 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 17:59:24: transform script from git to FTP successfully
+2021-02-09 17:59:24: Switch to Root Directory
+2021-02-09 17:59:24: connect FTP(10.102.4.219:21) closed 
+2021-02-09 17:59:24: connect FTP(10.102.4.219:21) successfully
+2021-02-09 17:59:24: login FTP(10.102.4.219:21) successfully
+2021-02-09 17:59:24: The code/ directory already exists
+2021-02-09 18:00:03: connect FTP(10.102.4.219:21) successfully
+2021-02-09 18:00:03: login FTP(10.102.4.219:21) successfully
+2021-02-09 18:00:04: Git tag retrieved successfully
+2021-02-09 18:00:04: The tag and hash value were successfully stored in the dictionary
+2021-02-09 18:00:04: current directory in FTP: ['/mnt/work/FTP/Agent', '/mnt/work/FTP/Auto', '/mnt/work/FTP/LARKPHONEFAILPICTURES', '/mnt/work/FTP/Logs', '/mnt/work/FTP/Macallan', '/mnt/work/FTP/Restrain', '/mnt/work/FTP/SoftWareResources', '/mnt/work/FTP/git_code', '/mnt/work/FTP/sanfang_apk', '/mnt/work/FTP/下载', '/mnt/work/FTP/临时文件', '/mnt/work/FTP/公共的', '/mnt/work/FTP/图片', '/mnt/work/FTP/文档', '/mnt/work/FTP/桌面', '/mnt/work/FTP/模板', '/mnt/work/FTP/视频', '/mnt/work/FTP/音乐'] 
+2021-02-09 18:00:04: Macallan The folder already exists. Update the DIR list and enter the folder
+2021-02-09 18:00:04: 15A The folder already exists. Update the DIR list and enter the folder
+2021-02-09 18:00:04: Scripts The folder already exists. Update the DIR list and enter the folder
+2021-02-09 18:00:04: DOU The folder already exists. Update the DIR list and enter the folder
+2021-02-09 18:00:04: HW The folder already exists. Update the DIR list and enter the folder
+2021-02-09 18:00:04: QW1900 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 18:00:04: SC_UL10V100R001C00B132 The folder already exists. Update the DIR list and enter the folder
+2021-02-09 18:00:04: transform script from git to FTP successfully
+2021-02-09 18:00:04: Switch to Root Directory
+2021-02-09 18:00:04: connect FTP(10.102.4.219:21) closed 
+2021-02-09 18:00:04: connect FTP(10.102.4.219:21) successfully
+2021-02-09 18:00:04: login FTP(10.102.4.219:21) successfully
+2021-02-09 18:00:04: The code directory already exists

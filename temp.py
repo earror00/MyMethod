@@ -138,7 +138,6 @@ import json
 # pull()
 ''''''
 
-
 # # 创建本地路径用来存放远程仓库下载的代码
 # git_url = 'http://101013483@10.102.4.219:58443/r/Test/StressDemo.git'
 # a = git_url.split('/')[-1].split('.')[0]
@@ -147,24 +146,6 @@ import json
 # # 拉取代码
 # Repo.clone_from(git_url, to_path=download_path, branch='master')
 
-
-# 下载git源码时，是否要考虑版本的问题，还是说直接下载最新版即可
-# def download_git_file(git_url, branch):
-#     # 同github格式的话，以zip格式下载源代码，是在原地址的基础上替换.git为archive/branch.zip
-#     # 例如：git地址为https://github.com/earror00/test.git
-#     # 实际的zip下载地址为：https://github.com/earror00/test/archive/main.zip，这里的main为当前的分支，分支的目录可通过git ls-remote git_url 获取
-#
-#     zip_download_addr = git_url.replace('.git', '/archive/' + branch + '.zip')
-#     zip_download_addr = git_url.replace('.git', '')
-#
-#     return urllib.request.urlopen(zip_download_addr)
-#
-#
-# ftp = FTP('10.102.4.219', 'ceshi', 'ceshi123')
-# ftp.set_debuglevel(1)
-# ftp.pwd()
-# file = download_git_file('http://10.102.4.219:3000/Macallan/15A.git', 'master')
-# ftp.storbinary('STOR testCode.zip', file)
 
 class temp:
     def __init__(self):

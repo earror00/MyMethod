@@ -1,14 +1,17 @@
-# _*_coding:utf-8_*_
+# -*-coding:utf-8-*-
 import os
-from ftplib import FTP
-from Utils import Utils
 import socket
+import time
 import urllib.request
+from ftplib import FTP
+from utils import Utils
 
 
 class FTPTools:
-
-    def __init__(self, host, port, username, password):
+    """
+    ftp工具类，实现了Python与ftp一些基础功能
+    """
+    def __init__(self, host, port, username, password, timeout=30):
         """
         : 初始化，将FTP的各类信息导入
         :param host: FTP服务器的地址
@@ -20,26 +23,35 @@ class FTPTools:
         self.port = port
         self.username = username
         self.password = password
-        self.currentDir = '/mnt/work/FTP/'
+        self.timeout = timeout
+        self.current_dir = '/mnt/work/FTP/'
         self.upload_address = ''
-        self.ftp = FTP()
+        self.ftp = ''
         self.util = Utils()
+        # 链接失败的重试次数
+        self.try_times = 3
 
     def connect_ftp(self):
         """
         : 连接并登录FTP
         """
-        try:
-            self.ftp.connect(self.host, self.port)
-            self.util.write_log('connect FTP(%s:%s) successfully' % (self.host, self.port))
-            self.ftp.set_debuglevel(2)
-            self.ftp.login(self.username, self.password)
-            self.util.write_log('login FTP(%s:%s) successfully' % (self.host, self.port))
-            self.ftp.getwelcome()
-        except Exception as e:
-            self.util.write_log('connect FTP(%s:%s) Error' % (self.host, self.port))
-            self.util.write_log(e)
-            self.close_ftp()
+        while True:
+            try:
+                self.ftp = FTP(host=self.host, user=self.username, passwd=self.password,
+                               timeout=self.timeout)
+                self.util.write_log(self.ftp.getwelcome())
+                self.util.write_log('Connect and login FTP successfully')
+                return
+            # 可能遭遇网络异常
+            except Exception as err:
+                if self.try_times != 0:
+                    self.util.write_log('Connection %s failed, trying again' % self.host)
+                    self.try_times -= 1
+                    time.sleep(3)
+                else:
+                    self.util.write_log('Retry 3 times failed, end program')
+                    self.util.write_log('Error: ' + str(err))
+                    exit(1)
 
     def close_ftp(self):
         """
@@ -55,15 +67,17 @@ class FTPTools:
         :param source_path: 需要上传的文件相对路径
         :param filename: 文件名
         """
-        file = open(os.path.abspath(source_path), 'rb')
+        file = ''
         try:
-            self.ftp.cwd(self.currentDir + des_path)
+            file = open(os.path.abspath(source_path), 'rb')
+            self.ftp.cwd(self.current_dir + des_path)
             self.ftp.storbinary('STOR %s.log' % filename, file)
             self.util.write_log('upload %s successfully' % filename)
             file.close()
-        except socket.error as e:
-            self.util.write_log('Error: ' + e)
+        except socket.error as err:
+            self.util.write_log('Error: ' + str(err))
             self.util.write_log('upload file failed')
+            file.close()
             self.close_ftp()
 
     def delete_file(self, filepath, filename):
@@ -76,8 +90,8 @@ class FTPTools:
             self.ftp.cwd(filepath)
             self.ftp.delete(filename)
             self.util.write_log('delete %s successfully' % filename)
-        except Exception as e:
-            self.util.write_log('Error: ' + str(e))
+        except Exception as err:
+            self.util.write_log('Error: ' + str(err))
             self.util.write_log('delete %s failed' % filename)
             self.close_ftp()
 
@@ -93,18 +107,16 @@ class FTPTools:
         :return: 返回文件解压后的绝对路径
         """
         try:
-            file_handler = open(des_path + filename, 'wb')
             self.ftp.cwd(source_path)
             self.ftp.pwd()
-            self.ftp.retrbinary('RETR ' + filename, file_handler.write)
+            self.ftp.retrbinary('RETR ' + filename, open(des_path + '\\' + filename, 'wb').write)
             self.util.write_log('%s downloaded successfully' % filename)
-            zip_src = des_path + filename
-            des_dir = des_path + '/' + filename.replace('.zip', '') + '/'
+            zip_src = des_path + '\\' + filename
+            des_dir = des_path + '\\' + filename.replace('.zip', '') + '\\'
             self.util.decompressed_file(zip_src, des_dir)
-            file_handler.close()
             return os.path.abspath(des_dir)
-        except Exception as e:
-            self.util.write_log('Error: ' + str(e))
+        except Exception as err:
+            self.util.write_log('Error: ' + str(err))
             self.util.write_log('transform failed')
             self.close_ftp()
             self.connect_ftp()
@@ -133,16 +145,17 @@ class FTPTools:
         在FTP服务器上创建目录
         :param dir_list: 需要创建的目录，此处的输入格式为’test1/test2/test3/‘
         """
-        self.ftp.cwd(self.currentDir)
-        cur_dir_list = self.ftp.nlst(self.currentDir)
-        self.util.write_log('current directory in FTP: %s ' % self.ftp.nlst(self.currentDir))
-        root_dir = self.currentDir
+        self.ftp.cwd(self.current_dir)
+        cur_dir_list = self.ftp.nlst(self.current_dir)
+        self.util.write_log('current directory in FTP: %s ' % self.ftp.nlst(self.current_dir))
+        root_dir = self.current_dir
         if '/' in dir_list:
             dir_list = dir_list.split('/')
             for dirs in dir_list:
-                print(root_dir + dirs)
-                if (root_dir + dirs) in cur_dir_list:
-                    self.util.write_log('%s The folder already exists. Update the DIR list and enter the folder' % dirs)
+                # print(root_dir + dirs)
+                if root_dir + dirs in cur_dir_list:
+                    self.util.write_log('%s The folder already exists. '
+                                        'Update the DIR list and enter the folder' % dirs)
                     cur_dir_list = self.ftp.nlst(root_dir + dirs + '/')
                     root_dir = root_dir + dirs + '/'
                 else:
@@ -152,11 +165,13 @@ class FTPTools:
                     root_dir = root_dir + dirs + '/'
                     self.util.write_log(dirs + ' Directory creation completed')
         else:
-            dir_namePath = root_dir + dir_list
-            if dir_namePath not in cur_dir_list:
-                self.util.write_log('FTP current directory do not exist %s, creat %s' % (dir_list, dir_list))
-                self.ftp.mkd(dir_namePath)
+            dir_name_path = root_dir + dir_list
+            if dir_name_path not in cur_dir_list:
+                self.util.write_log('FTP current directory do not exist %s, '
+                                    'creat %s' % (dir_list, dir_list))
+                self.ftp.mkd(dir_name_path)
                 self.util.write_log('creat %s directory success' % dir_list)
             else:
-                self.util.write_log('FTP current directory exist %s, do not creat %s' % (dir_list, dir_list))
+                self.util.write_log('FTP current directory exist %s, '
+                                    'do not creat %s' % (dir_list, dir_list))
         self.upload_address = root_dir

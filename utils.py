@@ -1,4 +1,14 @@
-# _*_coding:utf-8_*_
+# -*- coding: utf-8 -*-
+# ---
+# @Institution: MyMethod
+# @Time: ${DATE}
+# @File: ${NAME}.py
+# @Author: Earror
+# @E-mail: earor@outlook.com
+# @Desc: Function of this file
+# @update: Record important updates
+# ---
+
 import os
 import subprocess
 import time
@@ -7,7 +17,7 @@ import zipfile
 
 class Utils:
     def __init__(self):
-        self.currentPath = os.path.abspath(os.path.dirname(__file__))
+        self.current_path = os.path.abspath(os.path.dirname(__file__))
 
     def init_dir(self):
         """
@@ -22,43 +32,46 @@ class Utils:
         :param creat_dirname: 需要被创建的目录，相对路径，格式为test1/test2/test3/
         """
         if os.path.exists(creat_dirname):
-            self.write_log('The directory  %s already exists and does not need to be created' % creat_dirname)
+            self.write_log('The directory  %s already exists and does not need to be created'
+                           % creat_dirname)
         else:
             self.write_log('creat a new directory')
             os.makedirs(creat_dirname)
-            for root, dirs, file in os.walk(self.currentPath):
+            for root, dirs, file in os.walk(self.current_path):
                 if creat_dirname in dirs:
                     self.write_log('%s Directory created successfully' % creat_dirname)
                 else:
                     self.write_log('%s Directory creation failed' % creat_dirname)
                 break
 
-    def write_log(self, info):
+    def write_log(self, log_info):
         """
-        : 日志写入
-        :param info: 将指定内容写入log文件中
+        :param log_info: log内的内容
+        :return:
         """
-        format_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
-        log_file = 'Log_' + time.strftime("%Y%m%d") + '.log'
-        f = open('.\\Log\\' + log_file, 'a+', encoding='utf-8')
-        print(format_time + ': ' + info)
-        f.write(format_time + ': ' + info + '\n')
-        f.close()
+        runtime_log_path = os.path.abspath(os.path.dirname(__file__))
+        curr_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))  # 获取当前时间
+        log_time = time.strftime('%Y%m%d', time.localtime(time.time()))
+        file = open(runtime_log_path + '\\Log\\' + 'Log_' + log_time + '.log', 'a+',
+                    encoding='utf-8')
+        formatted_log = curr_time + ": " + log_info + "\n"
+        file.write(formatted_log)
+        file.close()
 
-    def decompressed_file(self, filePath, desDir):
+    def decompressed_file(self, filepath, des_dir):
         """
         : 解压文件
-        :filePath: zip压缩文件的路径
-        :desDir: 文件解压的目标路径
+        :filepath: zip压缩文件的路径
+        :des_dir: 文件解压的目标路径
         """
-        f = zipfile.is_zipfile(filePath)
-        if f:
-            fz = zipfile.ZipFile(filePath, 'r')
-            for files in fz.namelist():
-                fz.extract(files, desDir)
+        file = zipfile.is_zipfile(filepath)
+        if file:
+            zip_file = zipfile.ZipFile(filepath, 'r')
+            for files in zip_file.namelist():
+                zip_file.extract(files, des_dir)
             self.write_log("zip file decompressed successfully")
-            fz.close()
-            os.remove(filePath)
+            zip_file.close()
+            os.remove(filepath)
             self.write_log('ZIP file deleted successfully')
         else:
             self.write_log("This is not zip file")
@@ -83,11 +96,11 @@ class Utils:
         : 通过cmd命令直接执行git指令，获得tag和hash_code, 存在的隐患是，如果执行环境中没有安装git，该命令失效
         :param git_url: 代码的git地址
         """
-        command = 'git ls-remote' + ' ' + git_url
-        pope = subprocess.Popen(command, stdout=subprocess.PIPE)
-        pope.wait()
+        command = 'git ls-remote --tag' + ' ' + git_url
+        popen = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
+        popen.wait()
         self.write_log('Git tag retrieved successfully')
-        lines = pope.stdout.readlines()
+        lines = popen.stdout.readlines()
         return [line.decode('gbk') for line in lines]
 
     def crop_tag_result(self, tag_result):
@@ -99,7 +112,7 @@ class Utils:
         crop_result = {}
         for temp in tag_result:
             # 查询结果中带^{}和不带^{}的最终指向的文件是一样的
-            if '^{}' not in temp:
+            if '^{}' not in temp and 'HEAD':
                 key = temp.split('/')[2].replace('\n', '')
                 value = temp.split("/")[0].replace('\trefs', '')
                 crop_result.update({key: value})
@@ -109,7 +122,8 @@ class Utils:
         return crop_result
 
     def get_store_dir(self, category, customer, project, script_number):
-        path = ('%s/%s/%s/%s/%s/%s/%s' % ('Macallan', '15A', 'Scripts', category, customer, project, script_number))
+        path = ('%s/%s/%s/%s/%s/%s/%s' % ('Macallan', '15A', 'Scripts', category, customer,
+                                          project, script_number))
         return path
 
     def make_dir_by_level(self, new_dir_path):
@@ -124,9 +138,10 @@ class Utils:
                     self.write_log('The %s directory already exists' % dirs)
                     os.chdir(os.path.join(os.getcwd(), dirs))
                 else:
-                    self.write_log('%s Directory does not exist, create this directory and switch to it' % dirs)
+                    self.write_log('%s Directory does not exist, '
+                                   'create this directory and switch to it' % dirs)
                     os.mkdir(dirs)
                     os.chdir(os.path.join(os.getcwd(), dirs))
-        except Exception as e:
-            self.write_log('Creating directory Error: ' + str(e))
+        except IOError as err:
+            self.write_log('Creating directory Error: ' + str(err))
         return os.path.abspath(os.getcwd())

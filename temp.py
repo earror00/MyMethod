@@ -185,45 +185,6 @@ class temp:
         self.ftp.cwd('/' + des_path)
         pass
 
-class temp:
-    def __init__(self):
-        self.ftp = FTP('10.102.4.219', 'ceshi', 'ceshi123')
-        self.ftp_root_path = '/mnt/work/FTP'
-        self.repo = git.Repo.init('.')
-        self.git_url = 'http://101013483@10.102.4.219:58443/r/Test/StressDemo.git'
-        
-    # http://101013483@10.102.4.219:58443/r/Test/StressDemo.git    
-    # http://10.102.4.219:58443/zip/?r=Test/StressDemo.git&h=c77fbfba444132f809f4f27695d6effeaf1f84a6&format=zip
-    def addr_translator(self, git_url, h_code):
-        temp_addr = git_url.replace('/r/', '/zip/?r=') + '&h=' + h_code + '&format=zip'
-        # 如果传入的git地址存在用户名，将用户名替换掉，如果不存在，则temp_addr即为最终下载地址
-        if '@' in temp_addr:
-            final_addr = 'http://' + temp_addr.split('@')[1]
-        else:
-            final_addr = temp_addr
-        return final_addr
-
-
-    def download_git_file(self, git_url, branch):
-        zip_addr = git_url.replace('.git', '/archive/' + branch + '.zip')
-        file = urllib.request.urlopen(zip_addr)
-        return file
-
-    def get_tag_and_hash(self, git_url):
-        repo = git.Repo(git_url)
-        remote_branches = []
-        for ref in repo.git.branch('-r').split('\n'):
-            print(ref)
-            remote_branches.append(ref)
-
-        pass
-
-    def trans_to_ftp(self, git_url, branch, des_path):
-        handle_file = self.download_git_file(git_url, branch)
-        self.ftp.cwd('/' + des_path)
-        pass
-
-
 if __name__ == '__main__':
     # repo = git.Git('git ls-remote http://10.102.4.219:3000/Macallan/15A.git')
     # print(repo)

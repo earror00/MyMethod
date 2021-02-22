@@ -4,7 +4,7 @@ import os
 import shutil
 from ftplib import FTP
 import urllib.request
-from imaplib import Debug
+# from imaplib import Debug
 
 import git
 from git.repo import Repo
@@ -147,7 +147,7 @@ import json
 # Repo.clone_from(git_url, to_path=download_path, branch='master')
 
 
-class temp:
+class temp_pause:
     def __init__(self):
         self.ftp = FTP('10.102.4.219', 'ceshi', 'ceshi123')
         self.ftp_root_path = '/mnt/work/FTP'

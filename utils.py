@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # ---
 # @Institution: MyMethod
-# @Time: ${DATE}
-# @File: ${NAME}.py
+# @Time: 2021年3月4日
+# @File: utils.py
 # @Author: Earror
 # @E-mail: earor@outlook.com
 # @Desc: Function of this file
@@ -13,6 +13,8 @@ import os
 import subprocess
 import time
 import zipfile
+
+from loguru import logger
 
 
 class Utils:
@@ -58,24 +60,6 @@ class Utils:
         file.write(formatted_log)
         file.close()
 
-    def decompressed_file(self, filepath, des_dir):
-        """
-        : 解压文件
-        :filepath: zip压缩文件的路径
-        :des_dir: 文件解压的目标路径
-        """
-        file = zipfile.is_zipfile(filepath)
-        if file:
-            zip_file = zipfile.ZipFile(filepath, 'r')
-            for files in zip_file.namelist():
-                zip_file.extract(files, des_dir)
-            self.write_log("zip file decompressed successfully")
-            zip_file.close()
-            os.remove(filepath)
-            self.write_log('ZIP file deleted successfully')
-        else:
-            self.write_log("This is not zip file")
-
     def addr_translator(self, git_url, h_code):
         """
         : 裁剪git地址，转换成以.zip结尾的zip文件下载地址，该地址拼接规则仅适用于内部搭建的gitblit仓库
@@ -97,10 +81,10 @@ class Utils:
         :param git_url: 代码的git地址
         """
         command = 'git ls-remote --tag' + ' ' + git_url
-        popen = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
-        popen.wait()
+        pope = subprocess.Popen(command, stdout=subprocess.PIPE, shell=True)
+        pope.wait()
         self.write_log('Git tag retrieved successfully')
-        lines = popen.stdout.readlines()
+        lines = pope.stdout.readlines()
         return [line.decode('gbk') for line in lines]
 
     def crop_tag_result(self, tag_result):
@@ -145,3 +129,42 @@ class Utils:
         except IOError as err:
             self.write_log('Creating directory Error: ' + str(err))
         return os.path.abspath(os.getcwd())
+
+    def compressed_dir(self, file_path, file_name):
+        """
+        压缩指定文件夹内的所有内容
+        :param file_path: 文件夹的绝对路径 xxx\\xxx
+        :param file_name: 压缩后的文件名称 xxx
+        """
+        zip_file = zipfile.ZipFile(file_name + '.zip', 'w', zipfile.ZIP_DEFLATED)
+        logger.info('start compress folder....')
+        for dirpath, dirnames, filenames in os.walk(file_path):
+            for filename in filenames:
+                logger.info('....add %s to zipfile....' % filename)
+                zip_file.write(os.path.join(dirpath, filename))
+        logger.success('Compressed folder: %s successfully' % file_name)
+        zip_file.close()
+
+    def decompressed_file(self, filepath, des_dir):
+        """
+        : 解压文件
+        :filepath: zip压缩文件的路径 xxx\\xxx.zip
+        :des_dir: 文件解压的目标路径 xxx\\
+        """
+        file = zipfile.is_zipfile(filepath)
+        if file:
+            zip_file = zipfile.ZipFile(filepath, 'r')
+            for files in zip_file.namelist():
+                zip_file.extract(files, des_dir)
+            logger.success("zip file decompressed successfully")
+            zip_file.close()
+            os.remove(filepath)
+            logger.success('ZIP file deleted successfully')
+        else:
+            logger.error("This is not zip file")
+
+
+logger: logger
+log_time = time.strftime('%Y%m%d', time.localtime(time.time()))
+logger.add(f".\\Log\\Runtime_Log_{log_time}.log", rotation="500MB", encoding="utf-8", enqueue=True, compression="zip",
+           retention="10 days")

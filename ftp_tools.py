@@ -4,7 +4,8 @@ import socket
 import time
 import urllib.request
 from ftplib import FTP
-from utils import Utils
+
+from utils import Utils, logger
 
 
 class FTPTools:
@@ -39,18 +40,18 @@ class FTPTools:
             try:
                 self.ftp = FTP(host=self.host, user=self.username, passwd=self.password,
                                timeout=self.timeout)
-                self.util.write_log(self.ftp.getwelcome())
-                self.util.write_log('Connect and login FTP successfully')
+                logger.info(self.ftp.getwelcome())
+                logger.success('Connect and login FTP successfully')
                 return
             # 可能遭遇网络异常
             except Exception as err:
                 if self.try_times != 0:
-                    self.util.write_log('Connection %s failed, trying again' % self.host)
+                    logger.warning('Connection %s failed, trying again' % self.host)
                     self.try_times -= 1
                     time.sleep(3)
                 else:
-                    self.util.write_log('Retry 3 times failed, end program')
-                    self.util.write_log('Error: ' + str(err))
+                    logger.error('Retry 3 times failed, end program')
+                    logger.error('Error: ' + str(err))
                     exit(1)
 
     def close_ftp(self):
@@ -58,7 +59,7 @@ class FTPTools:
         : 关闭FTP连接
         """
         self.ftp.quit()
-        self.util.write_log('connect FTP(%s:%s) closed ' % (self.host, self.port))
+        logger.success('connect FTP(%s:%s) closed ' % (self.host, self.port))
 
     def upload_file(self, des_path, source_path, filename):
         """
@@ -72,11 +73,11 @@ class FTPTools:
             file = open(os.path.abspath(source_path), 'rb')
             self.ftp.cwd(self.current_dir + des_path)
             self.ftp.storbinary('STOR %s.log' % filename, file)
-            self.util.write_log('upload %s successfully' % filename)
+            logger.success('upload %s successfully' % filename)
             file.close()
         except socket.error as err:
-            self.util.write_log('Error: ' + str(err))
-            self.util.write_log('upload file failed')
+            logger.error('Error: ' + str(err))
+            logger.error('upload file failed')
             file.close()
             self.close_ftp()
 

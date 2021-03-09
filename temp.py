@@ -138,6 +138,7 @@ import json
 # pull()
 ''''''
 
+
 # # 创建本地路径用来存放远程仓库下载的代码
 # git_url = 'http://101013483@10.102.4.219:58443/r/Test/StressDemo.git'
 # a = git_url.split('/')[-1].split('.')[0]
@@ -147,13 +148,13 @@ import json
 # Repo.clone_from(git_url, to_path=download_path, branch='master')
 
 
-class temp_pause:
+class temp:
     def __init__(self):
         self.ftp = FTP('10.102.4.219', 'ceshi', 'ceshi123')
         self.ftp_root_path = '/mnt/work/FTP'
         self.repo = git.Repo.init('.')
         self.git_url = 'http://101013483@10.102.4.219:58443/r/Test/StressDemo.git'
-        
+
     # http://101013483@10.102.4.219:58443/r/Test/StressDemo.git    
     # http://10.102.4.219:58443/zip/?r=Test/StressDemo.git&h=c77fbfba444132f809f4f27695d6effeaf1f84a6&format=zip
     def addr_translator(self, git_url, h_code):
@@ -164,7 +165,6 @@ class temp_pause:
         else:
             final_addr = temp_addr
         return final_addr
-
 
     def download_git_file(self, git_url, branch):
         zip_addr = git_url.replace('.git', '/archive/' + branch + '.zip')
@@ -184,6 +184,7 @@ class temp_pause:
         handle_file = self.download_git_file(git_url, branch)
         self.ftp.cwd('/' + des_path)
         pass
+
 
 if __name__ == '__main__':
     # repo = git.Git('git ls-remote http://10.102.4.219:3000/Macallan/15A.git')
